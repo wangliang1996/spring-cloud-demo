@@ -2,7 +2,7 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
-out
-gen
+service-consumer-1/target
+service-provider-1/target
