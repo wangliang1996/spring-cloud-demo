@@ -17,7 +17,7 @@ public class HelloController {
     private String port;
 
     @GetMapping("/hi")
-    public String hi(@RequestParam(value = "name", defaultValue = "provider", required = false) String name) {
+    public String hi(@RequestParam(value = "name", defaultValue = "provider-1", required = false) String name) {
         return "hi " + name + " i'm service provider 1,my port: " + port;
     }
 }
