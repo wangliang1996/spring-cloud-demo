@@ -1,0 +1,8 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea/
+*.iml
+service-consumer-1/target
+service-provider-1/target

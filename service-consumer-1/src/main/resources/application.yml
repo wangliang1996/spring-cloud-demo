@@ -1,0 +1,9 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: service-consumer-1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.220.130:8848
