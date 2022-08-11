@@ -6,3 +6,4 @@
 *.iml
 service-consumer-1/target
 service-provider-1/target
+nacos-config/target
