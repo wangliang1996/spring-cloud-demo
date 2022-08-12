@@ -2,7 +2,6 @@ package com.wliang.controller;
 
 import com.wliang.config.EmailConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022-08-11 19:33
  */
 @RestController
-@RefreshScope
 public class ConfigController {
 
     @Autowired
