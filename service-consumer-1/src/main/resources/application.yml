@@ -7,3 +7,19 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.220.130:8848
+    sentinel:
+      eager: true #通过设置为 true 时，在项目启动时就会将 Sentinel 直接初始化，完成向 Sentinel 控制台进行注册
+      transport:
+        dashboard: 192.168.220.130:9080
+        port: 8719
+  kafka:
+    bootstrap-servers:
+      - 192.168.220.130:9092
+    consumer:
+      group-id: service-consumer-1
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    topic-name: taskSummaryTopic
+feign:
+  sentinel:
+    enabled: true #打开sentinel对feign的支持

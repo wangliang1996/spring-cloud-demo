@@ -7,3 +7,10 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.220.130:8848
+  kafka:
+    bootstrap-servers:
+      - 192.168.220.130:9092
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic-name: taskSummaryTopic

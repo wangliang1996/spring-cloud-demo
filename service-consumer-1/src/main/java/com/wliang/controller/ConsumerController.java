@@ -1,5 +1,7 @@
 package com.wliang.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.wliang.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,17 @@ public class ConsumerController {
     private HelloService helloService;
 
     @GetMapping("/hi-feign")
+    @SentinelResource(value = "hiFeign",blockHandler = "handleHiException")
     public String hiFeign(){
-        return helloService.hi("wliang");
+        return helloService.hi("Lin");
+    }
+
+    @GetMapping("/hi-feign-fallback")
+    public String hiFeignFallback(){
+        return helloService.hi("sentinelFallback");
+    }
+
+    public String handleHiException(BlockException e){
+        return "handleHiException";
     }
 }
